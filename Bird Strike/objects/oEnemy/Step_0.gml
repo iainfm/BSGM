@@ -6,27 +6,40 @@
 var _move_dir = 0
 var _wobble = 1
 
+// iEnemy1.direction = 0
+
+
+
 if iEnemy1.visible {
 	iEnemy1.y += iEnemy1.sprite_height / 48
 	if iEnemy1.y > room_height {
 		iEnemy1.y = 0
 	}
 	
-	if iEnemy1.x > iPlayer.x {
-		_move_dir = -1 * _wobble
+	// Zero in on the player
+	if iEnemy1.x < ( iPlayer.x - iEnemy1.sprite_width) {
+		iEnemy1.speed = 4
 	}
-	else
-	{
-		_move_dir = 1 * _wobble
-	}
-	
-	// Add some wobble, as per original game
-	if random(10) > 8 {
-		_wobble = -1 * _wobble
+	else if iEnemy1.x > ( iPlayer.x + iEnemy1.sprite_width) {
+		iEnemy1.speed = -4
 	}
 	
-	iEnemy1.x += _move_dir
+	// Check left bound
+	if iEnemy1.x < 0 {
+		iEnemy1.speed = 4
+	}
 	
+	// Check right bound
+	else if iEnemy1.x > room_width - iEnemy1.sprite_width {
+		iEnemy1.speed = -4
+	}
+	
+	// Add some randomness
+	var _rmax = 15
+	if random(_rmax) == _rmax {
+		iEnemy1.speed = -1 * iEnemy1.speed
+	}
+		
 }
 
 else if iEnemy2.visible {
