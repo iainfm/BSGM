@@ -31,17 +31,7 @@ if _current_enemy.x < ( iPlayer.x - _current_enemy.sprite_width) {
 else if _current_enemy.x > ( iPlayer.x + _current_enemy.sprite_width) {
 	_current_enemy.speed = -4
 }
-/* else {
-	// Player X and Enemy X are equal
-	var _drand = random(1)
-	if _drand > 0.5 {
-		_current_enemy.speed = 4
-	}
-	else {
-		_current_enemy.speed = -4
-	}
-}*/
-	
+
 // Check left and right bounds
 if _current_enemy.x < 0 {
 	_current_enemy.speed = 4
@@ -60,4 +50,13 @@ if _current_enemy.speed = 0 {
 
 if random(_rmax) == _rmax {
 	_current_enemy.speed = -1 * _current_enemy.speed
+}
+
+// Drop a bomb
+if iBomb1.visible = false {
+	if random(10) >= 9 and _current_enemy.y < room_height - (3 * _current_enemy.sprite_height) {
+		iBomb1.x = _current_enemy.x + (_current_enemy.sprite_width / 2)
+		iBomb1.y = _current_enemy.y + iBomb1.sprite_height
+		iBomb1.visible = true
+	}
 }
