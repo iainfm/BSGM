@@ -1,78 +1,63 @@
 /// @description Fly enemy
-// Move the enemy sprite if it's visible
+// Move the enemy sprite that's visible
 
-
-// Which way the enemy is moving (generally towards the player)
-var _move_dir = 0
-var _wobble = 1
-
-// iEnemy1.direction = 0
-
-
+var _current_enemy
+var _rmax = 15
 
 if iEnemy1.visible {
-	iEnemy1.y += iEnemy1.sprite_height / 48
-	if iEnemy1.y > room_height {
-		iEnemy1.y = 0
-	}
+	_current_enemy = iEnemy1
+} else if iEnemy2.visible {
+	_current_enemy = iEnemy2
+} else if iEnemy3.visible {
+	_current_enemy = iEnemy3
+} else if iEnemy4.visible {
+	_current_enemy = iEnemy4
+} else if iEnemy5.visible {
+	_current_enemy = iEnemy5
+} else if iEnemy6.visible {
+	_current_enemy = iEnemy6
+} // else end of level - throws an exception at the moment
+
+// Descend the enemy; loop if it gets to the bottom of the room
+_current_enemy.y += _current_enemy.sprite_height / 48
+if _current_enemy.y > room_height {
+	_current_enemy.y = 0
+}
 	
-	// Zero in on the player
-	if iEnemy1.x < ( iPlayer.x - iEnemy1.sprite_width) {
-		iEnemy1.speed = 4
+// Zero in on the player
+if _current_enemy.x < ( iPlayer.x - _current_enemy.sprite_width) {
+	_current_enemy.speed = 4
+}
+else if _current_enemy.x > ( iPlayer.x + _current_enemy.sprite_width) {
+	_current_enemy.speed = -4
+}
+/* else {
+	// Player X and Enemy X are equal
+	var _drand = random(1)
+	if _drand > 0.5 {
+		_current_enemy.speed = 4
 	}
-	else if iEnemy1.x > ( iPlayer.x + iEnemy1.sprite_width) {
-		iEnemy1.speed = -4
+	else {
+		_current_enemy.speed = -4
 	}
+}*/
 	
-	// Check left bound
-	if iEnemy1.x < 0 {
-		iEnemy1.speed = 4
-	}
+// Check left and right bounds
+if _current_enemy.x < 0 {
+	_current_enemy.speed = 4
+}
+else if _current_enemy.x > room_width - _current_enemy.sprite_width {
+	_current_enemy.speed = -4
+}
+
+// Deal with edge cases
+
+if _current_enemy.speed = 0 {
+	_current_enemy.speed = 4
+}
 	
-	// Check right bound
-	else if iEnemy1.x > room_width - iEnemy1.sprite_width {
-		iEnemy1.speed = -4
-	}
-	
-	// Add some randomness
-	var _rmax = 15
-	if random(_rmax) == _rmax {
-		iEnemy1.speed = -1 * iEnemy1.speed
-	}
-		
-}
+// Add some randomness as per the original
 
-else if iEnemy2.visible {
-	iEnemy2.y += iEnemy2.sprite_height / 48
-	if iEnemy2.y > room_height {
-		iEnemy2.y = 0
-	}
-}
-
-else if iEnemy3.visible {
-	iEnemy3.y += iEnemy3.sprite_height / 48
-	if iEnemy3.y > room_height {
-		iEnemy3.y = 0
-	}
-}
-
-else if iEnemy4.visible {
-	iEnemy4.y += iEnemy4.sprite_height / 48
-	if iEnemy4.y > room_height {
-		iEnemy4.y = 0
-	}
-}
-
-else if iEnemy5.visible {
-	iEnemy5.y += iEnemy5.sprite_height / 48
-	if iEnemy5.y > room_height {
-		iEnemy5.y = 0
-	}
-}
-
-else if iEnemy6.visible {
-	iEnemy6.y += iEnemy6.sprite_height / 48
-	if iEnemy6.y > room_height {
-		iEnemy6.y = 0
-	}
+if random(_rmax) == _rmax {
+	_current_enemy.speed = -1 * _current_enemy.speed
 }
