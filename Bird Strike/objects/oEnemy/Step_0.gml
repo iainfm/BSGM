@@ -17,6 +17,9 @@ if iEnemy1.visible {
 } else if iEnemy6.visible {
 	_current_enemy = iEnemy6
 } // else end of level - throws an exception at the moment
+else {
+	exit
+}
 
 // Descend the enemy; loop if it gets to the bottom of the room
 _current_enemy.y += _current_enemy.sprite_height / 48

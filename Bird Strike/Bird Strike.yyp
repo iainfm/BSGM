@@ -35,6 +35,7 @@
   },
   "resources": [
     {"id":{"name":"Object8","path":"objects/Object8/Object8.yy",},},
+    {"id":{"name":"oLife","path":"objects/oLife/oLife.yy",},},
     {"id":{"name":"sScore_1","path":"sprites/sScore_1/sScore_1.yy",},},
     {"id":{"name":"sScore_5","path":"sprites/sScore_5/sScore_5.yy",},},
     {"id":{"name":"sReference","path":"sprites/sReference/sReference.yy",},},
@@ -64,6 +65,7 @@
     {"id":{"name":"oPigeonRL","path":"objects/oPigeonRL/oPigeonRL.yy",},},
     {"id":{"name":"sBomb","path":"sprites/sBomb/sBomb.yy",},},
     {"id":{"name":"sScore_0","path":"sprites/sScore_0/sScore_0.yy",},},
+    {"id":{"name":"sLife","path":"sprites/sLife/sLife.yy",},},
     {"id":{"name":"sScore_4","path":"sprites/sScore_4/sScore_4.yy",},},
     {"id":{"name":"sEnemy1","path":"sprites/sEnemy1/sEnemy1.yy",},},
     {"id":{"name":"oWorld","path":"rooms/oWorld/oWorld.yy",},},

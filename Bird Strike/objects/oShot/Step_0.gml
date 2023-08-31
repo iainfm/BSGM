@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Fire bullet
 // You can write your code in this editor
 if visible = true {
 	y = y - ( sprite_height / 2 )

@@ -18,6 +18,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"Object8","order":8,"path":"objects/Object8/Object8.yy",},
+    {"name":"oLife","order":9,"path":"objects/oLife/oLife.yy",},
     {"name":"sScore_1","order":12,"path":"sprites/sScore_1/sScore_1.yy",},
     {"name":"sScore_5","order":16,"path":"sprites/sScore_5/sScore_5.yy",},
     {"name":"sReference","order":7,"path":"sprites/sReference/sReference.yy",},
@@ -44,6 +45,7 @@
     {"name":"oPigeonRL","order":6,"path":"objects/oPigeonRL/oPigeonRL.yy",},
     {"name":"sBomb","order":8,"path":"sprites/sBomb/sBomb.yy",},
     {"name":"sScore_0","order":11,"path":"sprites/sScore_0/sScore_0.yy",},
+    {"name":"sLife","order":21,"path":"sprites/sLife/sLife.yy",},
     {"name":"sScore_4","order":15,"path":"sprites/sScore_4/sScore_4.yy",},
     {"name":"sEnemy1","order":4,"path":"sprites/sEnemy1/sEnemy1.yy",},
     {"name":"oWorld","order":1,"path":"rooms/oWorld/oWorld.yy",},

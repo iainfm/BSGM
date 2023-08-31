@@ -2,7 +2,10 @@
 // You can write your code in this editor
 if visible {
 	
-	visible = false
+	visible = false // hide the bullet and move it out of the way
+	speed = 0
+	y = 0
+	// y = room.height - oPlayer.sprite_height - sprite_height // and set it back to the bottom
 
 // Get the current enemy instance
 var _current_enemy = instance_find(oEnemy, global.enemy)
@@ -11,15 +14,34 @@ var _current_enemy = instance_find(oEnemy, global.enemy)
 	var _x_diff = ((_current_enemy.x + (_current_enemy.sprite_width / 2)) - x)
 	
 // If it's near the centre, they dead.
-	if  abs(_x_diff) <= 2 {
+	if  abs(_x_diff) <= 4 {
 		global.score += 15 // 150 points for a kill
 		global.enemy += 1
 		
 		if global.enemy >= 6  {
-			// TODO: End of level (running out of enemies will throw an exception at the moment)
+			// TODO: End of level improvements
+			
+			var _i_enemy
+			for (var _i = 0; _i < 6; _i++) {
+				_i_enemy = instance_find(oEnemy, _i)
+				_i_enemy.x = 92 + ( 80 * _i)
+				_i_enemy.y = 64
+				_i_enemy.speed = 0
+				_i_enemy.visible = true
+			}
+			
+			global.wave += 1 // increment wave number, ie enemy style. 
+			if ( global.wave > 4 ) {
+				global.wave = 1
+			}
+			oEnemy.sprite_index = asset_get_index("sEnemy" + string(global.wave))
+
+			global.enemy = 0
 		}
-		
-		_current_enemy.visible = false
+		else {
+			// 'Disappear' the enemy
+			_current_enemy.visible = false
+		}
 	}
 	else {
 // Only winged; award a small score
