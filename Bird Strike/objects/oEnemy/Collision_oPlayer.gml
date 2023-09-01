@@ -4,8 +4,11 @@
 var _i_life
 
 // if ( y == ( oPlayer.y + oPlayer.sprite_height) - oPlayer.sprite_height ) {
-oPlayer.x = (room_width / 2) - (oPlayer.sprite_width / 2)
-
+// oPlayer.x = (room_width / 2) - (oPlayer.sprite_width / 2)
+oPlayer.y = 0 - oPlayer.sprite_height
+oDeadPlayer.x = oPlayer.x
+oDeadPlayer.y = room_height - oPlayer.sprite_height
+oDeadPlayer.visible = true
 
 if (global.lives >= 1) {
 	_i_life = instance_find(oLife, global.lives - 1)

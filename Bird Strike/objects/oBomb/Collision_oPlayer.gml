@@ -3,14 +3,24 @@ var _i_life
 
 // Clear the bomb
 visible = false
-y = 0
+y = sprite_height
 // speed = 0
 
 // TODO: lost life sprite change, level reset etc
 
 
 // Do lost life / new life things
-oPlayer.x = (room_width / 2) - (oPlayer.sprite_width / 2)
+
+// var _flash_layer = layer_get_id("Flash")
+// layer_set_visible(_flash_layer, true)
+
+oDeadPlayer.x = oPlayer.x
+oDeadPlayer.y = oPlayer.y
+oPlayer.y = 0 - oPlayer.sprite_height
+oPlayer.visible = false
+oDeadPlayer.visible = true
+
+// oPlayer.x = (room_width / 2) - (oPlayer.sprite_width / 2)
 
 
 if (global.lives >= 1) {
@@ -27,6 +37,7 @@ if ( global.lives < 0 ) {
 	global.game_in_play = false
 	}
 
+// layer_set_visible(_flash_layer, false)
 
 
 

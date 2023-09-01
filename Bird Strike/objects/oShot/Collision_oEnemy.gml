@@ -35,12 +35,18 @@ var _current_enemy = instance_find(oEnemy, global.enemy)
 				global.wave = 1
 			}
 			oEnemy.sprite_index = asset_get_index("sEnemy" + string(global.wave))
+			//oEnemy.sprite_index = asset_get_index("sExplosion")
 
 			global.enemy = 0
 		}
 		else {
 			// 'Disappear' the enemy
 			_current_enemy.visible = false
+			iExplosion.x = _current_enemy.x
+			iExplosion.y = _current_enemy.y
+			_current_enemy.x = 0
+			_current_enemy.y = 0
+			iExplosion.visible = true
 		}
 	}
 	else {
