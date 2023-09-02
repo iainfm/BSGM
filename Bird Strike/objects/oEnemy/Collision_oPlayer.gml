@@ -3,8 +3,6 @@
 // TODO: move to a common subroutine
 var _i_life
 
-// if ( y == ( oPlayer.y + oPlayer.sprite_height) - oPlayer.sprite_height ) {
-// oPlayer.x = (room_width / 2) - (oPlayer.sprite_width / 2)
 oPlayer.y = 0 - oPlayer.sprite_height
 oDeadPlayer.x = oPlayer.x
 oDeadPlayer.y = room_height - oPlayer.sprite_height
@@ -18,13 +16,10 @@ if (global.lives >= 1) {
 
 global.lives -= 1
 
-// }
-
-//TODO: if lives < 0 { end game }
-
 if ( global.lives < 0 ) {
 	global.lives = 0
 	global.game_in_play = false
+	room_goto(rMenu)
 	}
 
 
