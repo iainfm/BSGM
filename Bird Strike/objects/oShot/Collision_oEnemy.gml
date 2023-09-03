@@ -15,19 +15,34 @@ var _current_enemy = instance_find(oEnemy, global.enemy)
 	
 // If it's near the centre, they dead.
 	if  abs(_x_diff) <= 4 {
-		global.score += 15 // 150 points for a kill
+		global.score += 15 // award 150 points for a kill
+		
+		// mark the fallen
+		if (global.enemy <=4) {
+			var _grave = instance_find(oGrave, global.enemy)
+			_grave.visible = true
+		}
+		
+		// bring on the next contender
 		global.enemy += 1
 		
 		if global.enemy >= 6  {
 			// TODO: End of level improvements
 			
 			var _i_enemy
+			var _i_grave
 			for (var _i = 0; _i < 6; _i++) {
 				_i_enemy = instance_find(oEnemy, _i)
 				_i_enemy.x = 92 + ( 80 * _i)
 				_i_enemy.y = 64
 				_i_enemy.speed = 0
 				_i_enemy.visible = true
+				
+				// re-hide the graves
+				if (_i <= 4) {
+					_i_grave = instance_find(oGrave, _i)
+					_i_grave.visible = false
+				}
 			}
 			
 			global.wave += 1 // increment wave number, ie enemy style. 
