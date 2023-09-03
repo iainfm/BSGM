@@ -34,7 +34,7 @@
     "IDEVersion": "2023.6.0.92",
   },
   "resources": [
-    {"id":{"name":"Object8","path":"objects/Object8/Object8.yy",},},
+    {"id":{"name":"oGameLoop","path":"objects/oGameLoop/oGameLoop.yy",},},
     {"id":{"name":"oLife","path":"objects/oLife/oLife.yy",},},
     {"id":{"name":"sMenu","path":"sprites/sMenu/sMenu.yy",},},
     {"id":{"name":"sScore_1","path":"sprites/sScore_1/sScore_1.yy",},},

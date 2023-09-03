@@ -1,7 +1,33 @@
-/// @description Draw score
+/// @description Draw score and manage extra lives
 // TODO: only if it has changed
 
-// global.score += 1
+if (global.score >= global.next_life_score) and (global.next_life_score > 0) {
+	
+	// Award an exra life and set the next next life threshold
+	if (global.next_life_score == 50) {
+		global.next_life_score = 100
+	}
+	else {
+		global.next_life_score = -1
+	}
+	
+	global.lives++
+	
+}
+
+if (global.lives >= 1) {
+	for (var _life = 0 ; _life < 5 ; _life++) {
+		_i_life = instance_find(oLife, _life)
+		if (_life < global.lives ) {
+			_i_life.visible = true
+		}
+		else {
+			_i_life.visible = false
+		}
+		
+	}
+}
+
 
 // Rollover the score at 99990 as per original
 if (global.score >= 10000) {

@@ -20,10 +20,10 @@ oPlayer.y = 0 - oPlayer.sprite_height
 oPlayer.visible = false
 oDeadPlayer.visible = true
 
-if (global.lives >= 1) {
-	_i_life = instance_find(oLife, global.lives - 1)
-	_i_life.visible = false
-}
+// if (global.lives >= 1) {
+// 	_i_life = instance_find(oLife, global.lives - 1)
+// 	_i_life.visible = false
+// }
 
 global.lives -= 1
 

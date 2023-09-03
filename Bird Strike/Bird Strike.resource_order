@@ -17,7 +17,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"Object8","order":8,"path":"objects/Object8/Object8.yy",},
+    {"name":"oGameLoop","order":8,"path":"objects/oGameLoop/oGameLoop.yy",},
     {"name":"oLife","order":9,"path":"objects/oLife/oLife.yy",},
     {"name":"sMenu","order":28,"path":"sprites/sMenu/sMenu.yy",},
     {"name":"sScore_1","order":12,"path":"sprites/sScore_1/sScore_1.yy",},
