@@ -4,8 +4,8 @@
 if (global.score >= global.next_life_score) and (global.next_life_score > 0) {
 	
 	// Award an exra life and set the next next life threshold
-	if (global.next_life_score == 50) {
-		global.next_life_score = 100
+	if (global.next_life_score == 500) {
+		global.next_life_score = 1000
 	}
 	else {
 		global.next_life_score = -1

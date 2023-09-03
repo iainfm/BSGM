@@ -1,11 +1,11 @@
 /// @description Enemy hit
-// You can write your code in this editor
+
 if visible {
 	
 	visible = false // hide the bullet and move it out of the way
 	speed = 0
 	y = 0
-	// y = room.height - oPlayer.sprite_height - sprite_height // and set it back to the bottom
+	
 
 // Get the current enemy instance
 var _current_enemy = instance_find(oEnemy, global.enemy)
@@ -27,32 +27,7 @@ var _current_enemy = instance_find(oEnemy, global.enemy)
 		global.enemy += 1
 		
 		if global.enemy >= 6  {
-			// TODO: End of level improvements
-			
-			var _i_enemy
-			var _i_grave
-			for (var _i = 0; _i < 6; _i++) {
-				_i_enemy = instance_find(oEnemy, _i)
-				_i_enemy.x = 92 + ( 80 * _i)
-				_i_enemy.y = 64
-				_i_enemy.speed = 0
-				_i_enemy.visible = true
-				
-				// re-hide the graves
-				if (_i <= 4) {
-					_i_grave = instance_find(oGrave, _i)
-					_i_grave.visible = false
-				}
-			}
-			
-			global.wave += 1 // increment wave number, ie enemy style. 
-			if ( global.wave > 4 ) {
-				global.wave = 1
-			}
-			oEnemy.sprite_index = asset_get_index("sEnemy" + string(global.wave))
-			//oEnemy.sprite_index = asset_get_index("sExplosion")
-
-			global.enemy = 0
+			next_level()
 		}
 		else {
 			// 'Disappear' the enemy
@@ -67,7 +42,7 @@ var _current_enemy = instance_find(oEnemy, global.enemy)
 	else {
 // Only winged; award a small score
 		global.score += 1
-// and welease wodger (TODO)
+// and welease wodger
 	var _pigeon_lr = instance_find(oPigeonLR, 0)
 	var _pigeon_rl = instance_find(oPigeonRL, 0)
 	var _new_pigeon
@@ -75,12 +50,12 @@ var _current_enemy = instance_find(oEnemy, global.enemy)
 // if neither pigeon flying, pick one at random
 	if (_pigeon_lr.visible == false) and (_pigeon_rl.visible == false) {
 		_new_pigeon = choose(_pigeon_lr, _pigeon_rl)
-		_new_pigeon.y = random_range(176, room_height - 64)
+		_new_pigeon.y = random_range(192, room_height - 96)
 		_new_pigeon.visible = true
 	}
 	
 	
-	var _pigeon = choose(oPigeonLR, oPigeonRL)
+	// var _pigeon = choose(oPigeonLR, oPigeonRL)
 	
 	}
 
