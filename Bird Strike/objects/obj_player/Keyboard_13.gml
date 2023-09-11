@@ -1,22 +1,19 @@
 /// @description Player action (fire)
 
-// Use iShot1 if not already in flight, but only if the other shot has cleared the tower
-
 if !global.game_in_play { exit }
 
-if iShot1.visible = false and iShot2.y < room_height - ( iShot1.sprite_height * 6 ) {
-	iShot1.x = obj_player.x + ( obj_player.sprite_width / 2) - ( iShot1.sprite_width  )
-	iShot1.y = room_height - obj_player.sprite_height - sprite_height
-	iShot1.visible = true
-	audio_play_sound(snd_player_fire, 1, false, global.gain)
+if ( instance_number(obj_shot) < 2 ) {
+	
+	// Check if the first shot has cleared the tower
+	if ( instance_number(obj_shot) == 1 ) {
+		var _first_bullet = instance_find(obj_shot, 0)
+		if _first_bullet.y > room_height  - ( obj_shot.sprite_height * 6 ) {
+			exit
+		}	
+	}
+	
+	var _new_shot_x = obj_player.x + (obj_player.sprite_width / 2) // - (obj_shot.sprite_width)
+	var _new_shot_y = room_height - obj_player.sprite_height - sprite_height
+	instance_create_layer(_new_shot_x, _new_shot_y, "Instances", obj_shot)
+	
 }
-
-// Otherwise, use iShot2, but only if iShot1 has left the building
-else if iShot2.visible = false and iShot1.y < room_height - ( iShot2.sprite_height * 6 ) {
-	iShot2.x = obj_player.x + ( obj_player.sprite_width / 2) - ( iShot2.sprite_width  )
-	iShot2.y = room_height - obj_player.sprite_height - sprite_height
-	iShot2.visible = true
-	audio_play_sound(snd_player_fire, 1, false, global.gain)
-}
-
-

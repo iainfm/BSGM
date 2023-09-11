@@ -1,12 +1,5 @@
 /// @description Enemy hit
 
-if visible {
-	
-	visible = false // hide the bullet and move it out of the way
-	speed = 0
-	y = 0
-	
-
 // Get the current enemy instance
 var _current_enemy = instance_find(obj_enemy, global.enemy)
 
@@ -47,20 +40,31 @@ var _current_enemy = instance_find(obj_enemy, global.enemy)
 		global.score += 1	
 	}
 	
-// and welease wodger
-var _pigeon_lr = instance_find(obj_pigeon_lr, 0)
-var _pigeon_rl = instance_find(obj_pigeon_rl, 0)
-var _new_pigeon
+// if no pigeon flying, pick one at random
+if (instance_number(obj_pigeon) == 0) {
+	var _new_pigeon_x = 0
+	var _new_pigeon_y = random_range(192, room_height - 96)
 	
-// if neither pigeon flying, pick one at random
-if (_pigeon_lr.visible == false) and (_pigeon_rl.visible == false) {
-	_new_pigeon = choose(_pigeon_lr, _pigeon_rl)
-	_new_pigeon.y = random_range(192, room_height - 96)
-	_new_pigeon.visible = true
+	switch (irandom(100) < 50) {
+	
+		case true:
+			// Left to Right
+			object_set_sprite(obj_pigeon, spr_pigeon_lr_strip5)
+			break
+		
+		case false:
+			// Right to Left
+			_new_pigeon_x = room_width
+			object_set_sprite(obj_pigeon, spr_pigeon_rl_strip5)
+			break
+		
+	}
+
+	instance_create_layer(_new_pigeon_x, _new_pigeon_y, "Instances", obj_pigeon)
 	obj_alarms.alarm[2] = global.pigeon_cheep_period
 }
 
-}
+instance_destroy()
 
 
 

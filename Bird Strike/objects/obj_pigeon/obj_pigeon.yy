@@ -1,9 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_pigeon_rl",
+  "name": "obj_pigeon",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -28,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPigeonRL_strip5",
-    "path": "sprites/sPigeonRL_strip5/sPigeonRL_strip5.yy",
+    "name": "spr_pigeon_lr_strip5",
+    "path": "sprites/spr_pigeon_lr_strip5/spr_pigeon_lr_strip5.yy",
   },
   "spriteMaskId": null,
   "visible": true,

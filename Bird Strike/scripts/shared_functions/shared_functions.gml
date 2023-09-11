@@ -33,6 +33,9 @@ function next_level() {
 		}
 	}
 	
+	// Randomise the enemies
+	randomise_enemies()
+	
 	// increment wave number, ie enemy style. Loop back to the beginning after wave 4
 	global.wave ++
 	if ( global.wave > 4 ) {
@@ -123,6 +126,27 @@ function flash_screen(_frames) {
 	var _flash_layer = layer_get_id("Flash")
 	layer_set_visible(_flash_layer, true)
 	obj_alarms.alarm[1] = _frames // set unflash timer
+}
+
+function randomise_enemies() {
+
+	// Randomise the enemies
+	
+	var _swap1
+	var _swap2
+	var _swap_temp
+	
+	for (var _i = 0; _i < 100; _i++) {
+	
+		_swap1 = instance_find(obj_enemy, irandom(instance_number(obj_enemy)-1 ))
+		_swap2 = instance_find(obj_enemy, irandom(instance_number(obj_enemy)-1 ))
+		
+		_swap_temp = _swap1.x
+		_swap1.x = _swap2.x
+		_swap2.x = _swap_temp
+		
+	}
+
 }
 
 /*

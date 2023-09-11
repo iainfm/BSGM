@@ -8,6 +8,7 @@ if visible = true {
 	if (y <= 112 ) {
 		
 		visible = false
+		instance_destroy()
 		// TODO: visible = false and other things
 	}
 }

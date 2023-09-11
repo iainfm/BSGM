@@ -32,9 +32,17 @@ global.stave[4] = [i_note_4_1, i_note_4_2, i_note_4_3, i_note_4_4, i_note_4_5, i
 // Seed random number generator
 randomize()
 
+// Make random more random-y
+var _max = (current_hour + 1) * (current_minute + 1) * (current_second + 1)
+var _temp
+for (var _i = 0; _i < _max; _i++) {
+	_temp = random(_i)
+}
+
+// and the enemy order (TODO: move to new level code)
+randomise_enemies()
+
 // Hide visual elements
-// var _inst_game_over = instance_find(obj_game_over, 0)
-// _inst_game_over.visible = false
 instance_destroy(obj_game_over)
 
 // Clear the staves

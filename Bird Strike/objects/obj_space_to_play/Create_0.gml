@@ -1,19 +1,9 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-/*
-var roomname = room_get_name(room);
-
-
-show_debug_message(string(roomname))
-
-show_debug_message(room_get_name(0))
-show_debug_message(room_get_name(1))
-show_debug_message(room_get_name(2))
-
-
-*/
+/// @description Loader / Menu creation screens
 
 global.gain = 1 
+global.room_speed = 60
 
+if ( room == rm_load_screen ) {
+	show_message("After the game loads, please click anywhere in the browser tab to enable sounds. Some bugs need ironing out...")
+}
 

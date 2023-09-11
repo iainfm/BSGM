@@ -11,3 +11,6 @@ alarm[2] = -1
 
 // Delay after Game Over message
 alarm[3] = -1
+
+// Wait for start of new game tune to play
+alarm[4] =  -1
