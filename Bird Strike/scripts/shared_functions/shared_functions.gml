@@ -57,10 +57,13 @@ function next_level() {
 	randomise_enemies()
 	
 	// increment wave number, ie enemy style. Loop back to the beginning after wave 4
-	global.wave ++
+	global.wave++
 	if ( global.wave > 4 ) {
 		global.wave = 1
 	}
+	
+	// increment level number (for difficulty)
+	global.level++
 	
 	// Set the appropriate enemy sprite
 	obj_enemy.sprite_index = asset_get_index("sEnemy" + string(global.wave))
@@ -105,7 +108,7 @@ function pigeon_hit() {
 
 
 	// Check for pigeon bonus
-	if (global.note == 2) { // array_length(global.stave[global.wave])) {
+	if (global.note == array_length(global.stave[global.wave])) {
 		// Play bonus tune(s)
 		global.bonus_tune_playing = true
 		

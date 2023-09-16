@@ -62,15 +62,14 @@ if random(_rmax) == _rmax {
 // Drop a bomb
 var _max_bombs = 3
 
-if (global.wave <= 2) {
+if (global.level <= 2) {
 	_max_bombs = 1
 }
-else if (global.wave <= 4) {
+else if (global.level <= 4) {
 	_max_bombs = 2
 }
 
 // TODO: Check other bombs dropped far enough before releasing another
-// TODO: Fix bomb count going back to 1 on wave 5
 if ( instance_number(obj_bomb) < _max_bombs ) {
 
 	if random(10) >= 9 and _current_enemy.y < room_height - (3 * _current_enemy.sprite_height) {
