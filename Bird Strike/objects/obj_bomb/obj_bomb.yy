@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sBomb",
-    "path": "sprites/sBomb/sBomb.yy",
+    "name": "spr_bomb",
+    "path": "sprites/spr_bomb/spr_bomb.yy",
   },
   "spriteMaskId": null,
   "visible": true,

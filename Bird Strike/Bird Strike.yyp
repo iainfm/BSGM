@@ -31,7 +31,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.0.98",
+    "IDEVersion": "2023.8.1.102",
   },
   "resources": [
     {"id":{"name":"snd_enemy_explosion","path":"sounds/snd_enemy_explosion/snd_enemy_explosion.yy",},},
@@ -88,6 +88,7 @@
     {"id":{"name":"obj_game_over","path":"objects/obj_game_over/obj_game_over.yy",},},
     {"id":{"name":"rm_load_screen","path":"rooms/rm_load_screen/rm_load_screen.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
+    {"id":{"name":"snd_tune_all","path":"sounds/snd_tune_all/snd_tune_all.yy",},},
     {"id":{"name":"sNumbers","path":"sprites/sNumbers/sNumbers.yy",},},
     {"id":{"name":"rClouds","path":"sprites/rClouds/rClouds.yy",},},
     {"id":{"name":"obj_dead_player","path":"objects/obj_dead_player/obj_dead_player.yy",},},
@@ -100,7 +101,7 @@
     {"id":{"name":"snd_player_hit","path":"sounds/snd_player_hit/snd_player_hit.yy",},},
     {"id":{"name":"sScore_3","path":"sprites/sScore_3/sScore_3.yy",},},
     {"id":{"name":"sWorld","path":"sprites/sWorld/sWorld.yy",},},
-    {"id":{"name":"sBomb","path":"sprites/sBomb/sBomb.yy",},},
+    {"id":{"name":"spr_bomb","path":"sprites/spr_bomb/spr_bomb.yy",},},
     {"id":{"name":"sScore_0","path":"sprites/sScore_0/sScore_0.yy",},},
     {"id":{"name":"sLife","path":"sprites/sLife/sLife.yy",},},
     {"id":{"name":"obj_note_semibreve","path":"objects/obj_note_semibreve/obj_note_semibreve.yy",},},
@@ -109,6 +110,7 @@
     {"id":{"name":"obj_staves","path":"objects/obj_staves/obj_staves.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"sStaves","path":"sprites/sStaves/sStaves.yy",},},
+    {"id":{"name":"snd_extra_life","path":"sounds/snd_extra_life/snd_extra_life.yy",},},
     {"id":{"name":"sEnemy1","path":"sprites/sEnemy1/sEnemy1.yy",},},
     {"id":{"name":"rm_world","path":"rooms/rm_world/rm_world.yy",},},
   ],

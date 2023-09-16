@@ -9,16 +9,13 @@ if room == rm_load_screen {
 }
 
 else if room == rm_menu {
-
-	if ( global.gain == 1 ) {
+	
+	if ( global.gain == 1 ) and ( global.playing == false ) {
+		global.playing = true
 		audio_play_sound(snd_new_game, 1, false, global.gain)
-		// while (global.new_game_tune_played) { } // (audio_is_playing(snd_new_game)) { }
-		// audio_play_sound(snd_new_level, 1, false, global.gain)
 		// Set an alarm to play the new level tune and move to rm_world
 		obj_alarms.alarm[4] = 3.5 * global.room_speed
 	}
-
-	// room_goto(rm_world)
 	
 }
 

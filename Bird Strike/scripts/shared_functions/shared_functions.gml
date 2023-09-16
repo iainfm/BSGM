@@ -15,14 +15,34 @@ function next_level() {
 	
 	global.enemy_active = false
 	obj_alarms.alarm[0] = 2 * global.room_speed
-			
+	
+	// Clear birbs, bombs, shots etc
+	
+	var _i, _inst
+	
+	for (_i = 0; _i < instance_number(obj_pigeon); _i++) {
+		_inst = instance_find(obj_pigeon, _i)
+		instance_destroy(_inst)
+	}
+
+	for (_i = 0; _i < instance_number(obj_bomb); _i++) {
+		_inst = instance_find(obj_bomb, _i)
+		instance_destroy(_inst)
+	}
+
+	for (_i = 0; _i < instance_number(obj_shot); _i++) {
+		_inst = instance_find(obj_shot, _i)
+		instance_destroy(_inst)
+	}
+
+
 	// Reposition the aircraft and reset the graves
 	var _i_enemy
 	var _i_grave
 	for (var _i = 0; _i < 6; _i++) {
 		_i_enemy = instance_find(obj_enemy, _i)
 		_i_enemy.x = 92 + ( 80 * _i)
-		_i_enemy.y = 38
+		_i_enemy.y = 64
 		_i_enemy.speed = 0
 		_i_enemy.visible = true
 				
@@ -52,7 +72,8 @@ function next_level() {
 	// Reset the pigeon bonus
 	clear_stave()
 	
-	// TODO: Insert a pause here/somewhere
+	// Reposition the player
+	obj_player.x = (room_width / 2) - (obj_player.sprite_width / 2)
 	
 	// Play the music
 	audio_play_sound(snd_new_level, 1, false, global.gain)
@@ -67,10 +88,13 @@ function pigeon_hit() {
 	// play the pigeon death sound
 	audio_play_sound(snd_pigeon_hit, 1, false, global.gain)
 	
-	// Stop and hide the pigeon
-	speed = 0
-	y = 0
-	visible = false
+	// Explode the pigeon(!)
+	var _i, _i_pigeon
+	for (_i = 0; _i < instance_number(obj_pigeon) ; _i++) {
+		_i_pigeon = instance_find(obj_pigeon, _i)
+		instance_create_layer(_i_pigeon.x, _i_pigeon.y, "Instances", obj_deadgeon)
+		instance_destroy(_i_pigeon)
+	}
 
 	// Award 100 juicy pigeon-points
 	global.score += 10
@@ -81,29 +105,26 @@ function pigeon_hit() {
 
 
 	// Check for pigeon bonus
-	if (global.note == array_length(global.stave[global.wave])) {
-		// global.note = 0
-		// Play bonus tune
-
+	if (global.note == 2) { // array_length(global.stave[global.wave])) {
+		// Play bonus tune(s)
+		global.bonus_tune_playing = true
+		
 		switch (global.wave) {
 			case 1:
 				audio_play_sound(snd_tune_1, 1, false, global.gain)
-				while(audio_is_playing(snd_tune_1)) { }
+				// while(audio_is_playing(snd_tune_1)) { }
+				
+				// while (global.bonus_tune_playing) {continue;}
+				break
 			case 2:
 				audio_play_sound(snd_tune_2, 1, false, global.gain)
-				while(audio_is_playing(snd_tune_2)) { }
+				break
 			case 3:
 				audio_play_sound(snd_tune_3, 1, false, global.gain)
-				while(audio_is_playing(snd_tune_3)) { }
+				break
 			case 4:
-				audio_play_sound(snd_tune_1, 1, false , global.gain)
-				while(audio_is_playing(snd_tune_1)) {}
-				audio_play_sound(snd_tune_2, 1, false, global.gain)
-				while(audio_is_playing(snd_tune_2)) { }
-				audio_play_sound(snd_tune_3, 1, false, global.gain)
-				while(audio_is_playing(snd_tune_3)) { }
-				audio_play_sound(snd_tune_4, 1, false, global.gain)
-				while(audio_is_playing(snd_tune_4)) { }
+				audio_play_sound(snd_tune_all, 1, false, global.gain)
+				break
 		}
 		
 		// Add pigeon bonus

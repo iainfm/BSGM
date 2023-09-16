@@ -13,4 +13,7 @@ alarm[2] = -1
 alarm[3] = -1
 
 // Wait for start of new game tune to play
-alarm[4] =  -1
+alarm[4] = -1
+
+// Wait for bonus tune
+alarm[5] = -1

@@ -12,8 +12,11 @@ if (global.score >= global.next_life_score) and (global.next_life_score > 0) {
 	}
 	
 	global.lives++
+	audio_play_sound(snd_extra_life,1, false, global.gain)
 	
 }
+
+var _i_life
 
 if (global.lives >= 1) {
 	for (var _life = 0 ; _life < 5 ; _life++) {

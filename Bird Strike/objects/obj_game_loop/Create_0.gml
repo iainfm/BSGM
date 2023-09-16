@@ -19,6 +19,9 @@ game_set_speed(global.room_speed, gamespeed_fps)
 // Time delay between pigeon cheeps
 global.pigeon_cheep_period = 1.25 * global.room_speed
 
+// Is a bonus tune playing?
+global.bonus_tune_playing = false
+
 // May or may not need these:
 global.grave_x = [ 432, 472, 456, 400, 456 ]
 global.grave_y = [ 466, 482, 450, 468, 480 ]

@@ -60,10 +60,25 @@ if random(_rmax) == _rmax {
 }
 
 // Drop a bomb
-if iBomb1.visible = false {
+var _max_bombs = 3
+
+if (global.wave <= 2) {
+	_max_bombs = 1
+}
+else if (global.wave <= 4) {
+	_max_bombs = 2
+}
+
+// TODO: Check other bombs dropped far enough before releasing another
+// TODO: Fix bomb count going back to 1 on wave 5
+if ( instance_number(obj_bomb) < _max_bombs ) {
+
 	if random(10) >= 9 and _current_enemy.y < room_height - (3 * _current_enemy.sprite_height) {
-		iBomb1.x = _current_enemy.x + (_current_enemy.sprite_width / 2)
-		iBomb1.y = _current_enemy.y + iBomb1.sprite_height
-		iBomb1.visible = true
+		
+		var _new_bomb_x = _current_enemy.x + (_current_enemy.sprite_width / 2)
+		var _new_bomb_y = _current_enemy.y + sprite_get_height(spr_bomb)
+		instance_create_layer(_new_bomb_x, _new_bomb_y, "Instances", obj_bomb)
+		
 	}
+	
 }

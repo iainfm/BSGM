@@ -1,12 +1,11 @@
-/// @description Insert description here
+/// @description Bomb falls
 // You can write your code in this editor
 
 if visible {
 	y = y + ( sprite_height / 4 )
 
 	if (y > room_height) {
-		y = 0
-		visible = false
+		instance_destroy()
 	}
 }
 
