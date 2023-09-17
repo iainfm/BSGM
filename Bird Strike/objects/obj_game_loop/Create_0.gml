@@ -12,6 +12,7 @@ global.note = 0
 global.enemy_active = false
 global.game_paused = false
 global.gain = 1
+global.can_drop_bomb = false
 
 // Set game speed
 global.room_speed = 60 // fps

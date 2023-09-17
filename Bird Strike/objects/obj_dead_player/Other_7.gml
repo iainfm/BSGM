@@ -22,10 +22,10 @@ else {
 		obj_player.x = (room_width / 2) - (obj_player.sprite_width / 2)
 		obj_player.y = room_height - obj_player.sprite_height
 		obj_player.visible = true
-		visible = false
+		instance_destroy()
 	}
 
-
+	audio_play_sound(snd_new_level, 1, false, global.gain)
 	global.game_in_play = true
 
 }

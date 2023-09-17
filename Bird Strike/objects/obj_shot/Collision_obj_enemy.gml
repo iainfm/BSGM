@@ -23,6 +23,7 @@ var _current_enemy = instance_find(obj_enemy, global.enemy)
 		global.enemy += 1
 		
 		if global.enemy >= 6  {
+			global.game_in_play = false
 			next_level()
 		}
 		else {

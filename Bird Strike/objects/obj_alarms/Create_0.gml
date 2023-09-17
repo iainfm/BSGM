@@ -17,3 +17,5 @@ alarm[4] = -1
 
 // Wait for bonus tune
 alarm[5] = -1
+
+alarm[6] = 1 * global.room_speed

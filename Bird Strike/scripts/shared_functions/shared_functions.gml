@@ -20,6 +20,11 @@ function next_level() {
 	
 	var _i, _inst
 	
+	for (_i = 0; _i < instance_number(obj_bonus); _i++) {
+		_inst = instance_find(obj_bonus, _i)
+		instance_destroy(_inst) // TODO: Fix this
+	}
+	
 	for (_i = 0; _i < instance_number(obj_pigeon); _i++) {
 		_inst = instance_find(obj_pigeon, _i)
 		instance_destroy(_inst)
@@ -81,6 +86,9 @@ function next_level() {
 	// Play the music
 	audio_play_sound(snd_new_level, 1, false, global.gain)
 	
+	// Let's go!
+	global.game_in_play = true
+	
 }
 
 function pigeon_hit() {
@@ -110,14 +118,13 @@ function pigeon_hit() {
 	// Check for pigeon bonus
 	if (global.note == array_length(global.stave[global.wave])) {
 		// Play bonus tune(s)
-		global.bonus_tune_playing = true
+		global.game_in_play = false
+		global.enemy_active = false
+		obj_alarms.alarm[5] = 5.5 * global.room_speed
 		
 		switch (global.wave) {
 			case 1:
 				audio_play_sound(snd_tune_1, 1, false, global.gain)
-				// while(audio_is_playing(snd_tune_1)) { }
-				
-				// while (global.bonus_tune_playing) {continue;}
 				break
 			case 2:
 				audio_play_sound(snd_tune_2, 1, false, global.gain)
@@ -126,12 +133,13 @@ function pigeon_hit() {
 				audio_play_sound(snd_tune_3, 1, false, global.gain)
 				break
 			case 4:
+				obj_alarms.alarm[5] = 22.5 * global.room_speed
 				audio_play_sound(snd_tune_all, 1, false, global.gain)
 				break
 		}
 		
 		// Add pigeon bonus
-		var _added = 0
+		/*var _added = 0
 		audio_play_sound(snd_bonus, 1, false, global.gain)
 		while(audio_is_playing(snd_bonus)) {
 			if (_added < 150) {
@@ -139,7 +147,7 @@ function pigeon_hit() {
 				_added += 1
 			}
 		}
-		next_level()
+		next_level() */
 	}
 
 
