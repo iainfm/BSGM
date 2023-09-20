@@ -1,29 +1,10 @@
 /// @description Fly enemy
-// Move the enemy sprite that's visible
+// Move the enemy sprite
 
 var _current_enemy
 var _rmax = 15
 
-if iEnemy1.visible {
-	_current_enemy = iEnemy1
-} else if iEnemy2.visible {
-	_current_enemy = iEnemy2
-} else if iEnemy3.visible {
-	_current_enemy = iEnemy3
-} else if iEnemy4.visible {
-	_current_enemy = iEnemy4
-} else if iEnemy5.visible {
-	_current_enemy = iEnemy5
-} else if iEnemy6.visible {
-	_current_enemy = iEnemy6
-} // else end of level - throws an exception at the moment
-else {
-	exit
-}
-
-// Don't fly the enemy if not active
-// if (!global.enemy_active) { exit }
-
+_current_enemy = global.inst_enemy[global.enemy]
 
 if (!global.enemy_active) {
 	_current_enemy.speed = 0

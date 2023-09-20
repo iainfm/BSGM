@@ -2,6 +2,7 @@
 
 // Initialise global variables
 global.score = 0
+global.last_score = 0
 global.enemy = 0
 global.wave = 1
 global.level = 1
@@ -13,6 +14,7 @@ global.enemy_active = false
 global.game_paused = false
 global.gain = 1
 global.can_drop_bomb = false
+global.inst_enemy = 0
 
 // Set game speed
 global.room_speed = 60 // fps
@@ -44,6 +46,9 @@ for (var _i = 0; _i < _max; _i++) {
 	_temp = random(_i)
 }
 
+// Create the game elements
+create_instances()
+
 // and the enemy order (TODO: move to new level code)
 randomise_enemies()
 
@@ -52,3 +57,5 @@ instance_destroy(obj_game_over)
 
 // Clear the staves
 clear_stave()
+
+obj_alarms.alarm[7] = 1

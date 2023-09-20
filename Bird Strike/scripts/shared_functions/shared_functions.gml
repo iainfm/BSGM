@@ -160,6 +160,14 @@ function flash_screen(_frames) {
 	obj_alarms.alarm[1] = _frames // set unflash timer
 }
 
+function create_instances() {
+
+	for  (var _i = 0; _i < 6; _i++) {
+		global.inst_enemy[_i] = instance_create_layer(92 + (_i * 80), 64, "Instances", obj_enemy)
+	}
+	
+}
+
 function randomise_enemies() {
 
 	// Randomise the enemies

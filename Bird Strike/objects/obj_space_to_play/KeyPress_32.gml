@@ -14,7 +14,7 @@ else if room == rm_menu {
 		global.playing = true
 		audio_play_sound(snd_new_game, 1, false, global.gain)
 		// Set an alarm to play the new level tune and move to rm_world
-		obj_alarms.alarm[4] = 3.5 * global.room_speed
+		obj_alarms.alarm[4] = 3.5 // * global.room_speed
 	}
 	
 }

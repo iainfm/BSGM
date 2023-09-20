@@ -1,7 +1,7 @@
 /// @description Enemy hit
 
 // Get the current enemy instance
-var _current_enemy = instance_find(obj_enemy, global.enemy)
+var _current_enemy = global.inst_enemy[global.enemy] // instance_find(obj_enemy, global.enemy)
 
 // Find out how accurately the enemy has been hit
 	var _x_diff = ((_current_enemy.x + (_current_enemy.sprite_width / 2)) - x)
