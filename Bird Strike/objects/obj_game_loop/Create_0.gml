@@ -8,13 +8,16 @@ global.wave = 1
 global.level = 1
 global.lives = 2
 global.game_in_play = true
-global.next_life_score = 500
 global.note = 0
 global.enemy_active = false
+global.bombs_active = true
+global.player_active = true
+global.pigeon_active = true
 global.game_paused = false
 global.gain = 1
 global.can_drop_bomb = false
 global.inst_enemy = 0
+global.add_score = 0
 
 // Set game speed
 global.room_speed = 60 // fps
@@ -58,4 +61,6 @@ instance_destroy(obj_game_over)
 // Clear the staves
 clear_stave()
 
+obj_alarms.alarm[8] = 2 * global.room_speed
 obj_alarms.alarm[7] = 1
+

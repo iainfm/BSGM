@@ -1,6 +1,6 @@
 /// @description Player action (fire)
 
-if !global.game_in_play { exit }
+if ( !global.game_in_play || !global.player_active) { exit }
 
 if ( instance_number(obj_shot) < 2 ) {
 	

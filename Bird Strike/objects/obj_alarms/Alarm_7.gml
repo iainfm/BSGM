@@ -1,16 +1,17 @@
 /// @description Update score
 if (global.score >= global.next_life_score) and (global.next_life_score > 0) {
 	
-	// Award an exra life and set the next next life threshold
+	// Award an exra life
+	global.lives++
+	audio_play_sound(snd_extra_life,1, false, global.gain)
+	
+	// and set the next next life threshold
 	if (global.next_life_score == 500) {
 		global.next_life_score = 1000
 	}
 	else {
 		global.next_life_score = -1
 	}
-	
-	global.lives++
-	audio_play_sound(snd_extra_life,1, false, global.gain)
 	
 }
 
@@ -30,6 +31,11 @@ if (global.lives >= 1) {
 }
 
 alarm[7] = 1
+
+if (global.add_score != 0) {
+	global.score++
+	global.add_score--
+}
 
 if (global.score == global.last_score) { exit }
 

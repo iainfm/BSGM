@@ -1,6 +1,8 @@
 /// @description Wait for bonus tune
+instance_create_layer(228, 240, "Instances", obj_bonus)
 // show_message("Tune finished")
 // global.bonus_tune_playing = false
+/*
 
 // Display the bonus message
 instance_create_layer(228, 240, "Instances", obj_bonus)
@@ -20,14 +22,4 @@ while (_added < 150) {
 // }
 
 next_level()
-
-
-
-
-
-
-
-
-
-
-
+*/

@@ -59,7 +59,6 @@
     {"name":"i_note_4_7","path":"rooms/rm_world/rm_world.yy",},
     {"name":"i_note_4_8","path":"rooms/rm_world/rm_world.yy",},
     {"name":"i_note_1_4","path":"rooms/rm_world/rm_world.yy",},
-    {"name":"inst_F9A0B93","path":"rooms/rm_world/rm_world.yy",},
     {"name":"iAlarms","path":"rooms/rm_world/rm_world.yy",},
     {"name":"inst_game_over","path":"rooms/rm_world/rm_world.yy",},
   ],
@@ -69,9 +68,7 @@
         {"name":"g_ContrastIntensity","type":0,"value":"2",},
         {"name":"g_ContrastBrightness","type":0,"value":"2",},
       ],"userdefinedDepth":false,"visible":false,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_BonusStaves","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F9A0B93","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_staves","path":"objects/obj_staves/obj_staves.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":120.0,"y":0.0,},
-      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":false,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_BonusStaves","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Clouds","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"rClouds","path":"sprites/rClouds/rClouds.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":112,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_Notes_L4","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"i_note_4_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_note_minim","path":"objects/obj_note_minim/obj_note_minim.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":136.0,"y":8.0,},

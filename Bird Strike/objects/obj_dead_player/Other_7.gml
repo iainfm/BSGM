@@ -27,5 +27,7 @@ else {
 
 	audio_play_sound(snd_new_level, 1, false, global.gain)
 	global.game_in_play = true
+	global.enemy_active = false
+	obj_alarms.alarm[8] = 2 * global.room_speed
 
 }

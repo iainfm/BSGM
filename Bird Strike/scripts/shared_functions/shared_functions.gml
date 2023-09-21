@@ -14,7 +14,7 @@ function next_level() {
 	// TODO: End of level improvements
 	
 	global.enemy_active = false
-	obj_alarms.alarm[0] = 2 * global.room_speed
+	obj_alarms.alarm[0] = 3 * global.room_speed
 	
 	// Clear birbs, bombs, shots etc
 	
@@ -88,6 +88,8 @@ function next_level() {
 	
 	// Let's go!
 	global.game_in_play = true
+	global.bombs_active = true
+	global.player_active = true
 	
 }
 
@@ -120,6 +122,8 @@ function pigeon_hit() {
 		// Play bonus tune(s)
 		global.game_in_play = false
 		global.enemy_active = false
+		global.bombs_active = false
+		global.player_active = false
 		obj_alarms.alarm[5] = 5.5 * global.room_speed
 		
 		switch (global.wave) {
@@ -133,6 +137,7 @@ function pigeon_hit() {
 				audio_play_sound(snd_tune_3, 1, false, global.gain)
 				break
 			case 4:
+				instance_create_layer(120, 0, "Instances_BonusStaves", obj_staves)
 				obj_alarms.alarm[5] = 22.5 * global.room_speed
 				audio_play_sound(snd_tune_all, 1, false, global.gain)
 				break
