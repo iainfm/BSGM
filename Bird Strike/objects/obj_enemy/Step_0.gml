@@ -57,7 +57,7 @@ else if (global.level <= 4) {
 }
 
 // TODO: Check other bombs dropped far enough before releasing another
-if ( instance_number(obj_bomb) < _max_bombs ) && global.can_drop_bomb {
+if ( instance_number(obj_bomb) < _max_bombs ) && global.can_drop_bomb && y > 64 {
 
 	if random(10) >= 9 and _current_enemy.y < room_height - (3 * _current_enemy.sprite_height) {
 		

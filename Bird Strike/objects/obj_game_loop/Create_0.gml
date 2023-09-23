@@ -13,7 +13,6 @@ global.enemy_active = false
 global.bombs_active = true
 global.player_active = true
 global.pigeon_active = true
-global.game_paused = false
 global.gain = 1
 global.can_drop_bomb = false
 global.inst_enemy = 0
@@ -25,6 +24,7 @@ game_set_speed(global.room_speed, gamespeed_fps)
 
 // Time delay between pigeon cheeps
 global.pigeon_cheep_period = 1.25 * global.room_speed
+global.old_pigeon_speed = 0
 
 // Is a bonus tune playing?
 global.bonus_tune_playing = false

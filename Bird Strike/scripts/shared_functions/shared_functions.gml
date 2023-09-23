@@ -14,15 +14,16 @@ function next_level() {
 	// TODO: End of level improvements
 	
 	global.enemy_active = false
-	obj_alarms.alarm[0] = 3 * global.room_speed
+	
+	// Set enemy delay at start of level
+	obj_alarms.alarm[0] = 2 * global.room_speed
 	
 	// Clear birbs, bombs, shots etc
-	
 	var _i, _inst
 	
 	for (_i = 0; _i < instance_number(obj_bonus); _i++) {
 		_inst = instance_find(obj_bonus, _i)
-		instance_destroy(_inst) // TODO: Fix this
+		instance_destroy(_inst)
 	}
 	
 	for (_i = 0; _i < instance_number(obj_pigeon); _i++) {
@@ -124,7 +125,9 @@ function pigeon_hit() {
 		global.enemy_active = false
 		global.bombs_active = false
 		global.player_active = false
+		global.can_drop_bomb = false
 		obj_alarms.alarm[5] = 5.5 * global.room_speed
+		obj_alarms.alarm[6] = 2 * global.room_speed
 		
 		switch (global.wave) {
 			case 1:
@@ -143,16 +146,6 @@ function pigeon_hit() {
 				break
 		}
 		
-		// Add pigeon bonus
-		/*var _added = 0
-		audio_play_sound(snd_bonus, 1, false, global.gain)
-		while(audio_is_playing(snd_bonus)) {
-			if (_added < 150) {
-				global.score += 1
-				_added += 1
-			}
-		}
-		next_level() */
 	}
 
 
