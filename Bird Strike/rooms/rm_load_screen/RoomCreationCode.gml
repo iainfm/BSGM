@@ -1,0 +1,1 @@
+audio_play_sound(snd_loader_tune,1,true)

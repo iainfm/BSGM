@@ -1,5 +1,5 @@
 /// @description Update score
-if (global.score >= global.next_life_score) and (global.next_life_score > 0) {
+if (global.score >= global.next_life_score) and (global.next_life_score > 0) and (global.add_score == 0) {
 	
 	// Award an exra life
 	global.lives++
@@ -17,7 +17,7 @@ if (global.score >= global.next_life_score) and (global.next_life_score > 0) {
 
 var _i_life
 
-if (global.lives >= 1) {
+if (global.lives >= 0) {
 	for (var _life = 0 ; _life < 5 ; _life++) {
 		_i_life = instance_find(obj_life, _life)
 		if (_life < global.lives ) {

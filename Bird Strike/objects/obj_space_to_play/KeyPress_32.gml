@@ -5,6 +5,7 @@
 // draw_text(32, 32, roomname)
 
 if room == rm_load_screen {
+	audio_stop_all()
 	room_goto(rm_menu)
 }
 

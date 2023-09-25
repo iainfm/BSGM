@@ -77,6 +77,7 @@
     {"id":{"name":"spr_bonus","path":"sprites/spr_bonus/spr_bonus.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_alarms","path":"objects/obj_alarms/obj_alarms.yy",},},
+    {"id":{"name":"snd_loader_tune","path":"sounds/snd_loader_tune/snd_loader_tune.yy",},},
     {"id":{"name":"obj_score_0","path":"objects/obj_score_0/obj_score_0.yy",},},
     {"id":{"name":"sSpace_to_Play","path":"sprites/sSpace_to_Play/sSpace_to_Play.yy",},},
     {"id":{"name":"sScore_7","path":"sprites/sScore_7/sScore_7.yy",},},

@@ -57,6 +57,7 @@
     {"name":"sEnemy3","order":6,"path":"sprites/sEnemy3/sEnemy3.yy",},
     {"name":"spr_bonus","order":38,"path":"sprites/spr_bonus/spr_bonus.yy",},
     {"name":"obj_alarms","order":21,"path":"objects/obj_alarms/obj_alarms.yy",},
+    {"name":"snd_loader_tune","order":14,"path":"sounds/snd_loader_tune/snd_loader_tune.yy",},
     {"name":"obj_score_0","order":7,"path":"objects/obj_score_0/obj_score_0.yy",},
     {"name":"sSpace_to_Play","order":26,"path":"sprites/sSpace_to_Play/sSpace_to_Play.yy",},
     {"name":"sScore_7","order":18,"path":"sprites/sScore_7/sScore_7.yy",},

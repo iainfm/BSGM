@@ -119,7 +119,7 @@ function pigeon_hit() {
 
 
 	// Check for pigeon bonus
-	if (global.note == array_length(global.stave[global.wave])) {
+	if (global.note == 1){//array_length(global.stave[global.wave])) {
 		// Play bonus tune(s)
 		global.game_in_play = false
 		global.enemy_active = false
